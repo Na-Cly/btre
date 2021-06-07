@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(name='btre',
       version=1,
-      install_requires=['clipboard'],
+      install_requires=[],
       description='A regex string tool',
       author='nacly',
       url='https://www.github.com/na-cly/btre',
