@@ -1,0 +1,4 @@
+#!/usr/bin/env python3
+from btre.btre import main_btre
+
+main_btre()
