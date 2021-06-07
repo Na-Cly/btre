@@ -1,3 +1,6 @@
+# Description
+Enhanced regex for use with cli applications. Uses python3 regex.
+
 # Install: 
 python3 setup.py bdist_wheel
 pip3 install dist/btre-1-py3-none-any.whl
