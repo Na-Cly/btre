@@ -16,12 +16,17 @@ def get_args():
 
 def findall(raw_string,text): 
     """calls findall with regex string passed"""
-    finder = re.compile(raw_string)
+    try:
+        finder = re.compile(raw_string)
+    except Exception as err:
+        print(err)
+        sys.exit()
     return finder.findall(text)
 
 
 
 def main_btre():
+    """Main function that's called"""
     args = get_args()
     groups = None
     raw_string=r'{}'.format(args.regex)
