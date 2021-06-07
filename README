@@ -1,3 +1,17 @@
-install: 
+# Install: 
 python3 setup.py bdist_wheel
 pip3 install dist/btre-1-py3-none-any.whl
+
+# Usage:
+btre [-h] -r REGEX [-d DATA] [-g GROUPS]
+
+regex cli tool
+
+required arguments:
+  -r REGEX, --regex REGEX
+                        Regex with special characters escaped
+optional arguments:
+  -h, --help            show this help message and exit
+  -d DATA, --data DATA  If not specified input will be pulled from stdin.
+  -g GROUPS, --groups GROUPS
+                        List of capture groups to print. Eg: 0,1,2 / 0,2 / 0
