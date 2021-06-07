@@ -18,12 +18,19 @@ def findall(raw_string,text):
     """calls findall with regex string passed"""
     try:
         finder = re.compile(raw_string)
+        return finder.findall(text)
     except Exception as err:
-        print(err)
+        error_finder = re.compile(r'position\W*(\d+)')
+        position = error_finder.findall(str(err))[0]
+        print_at_error(err,int(position),raw_string)
         sys.exit()
-    return finder.findall(text)
 
-
+        
+def print_at_error(error,position,raw_string):
+    """prints out the regex error with a ^ below the bad character"""
+    print(error)
+    print(raw_string)
+    print(' '*position+'^')
 
 def main_btre():
     """Main function that's called"""
