@@ -3,9 +3,6 @@ import clipboard
 import argparse
 import sys
 
-
-
-
 def get_args():
     """
     get args
@@ -18,16 +15,17 @@ def get_args():
     return parser.parse_args()
 
 
-def findall(text): 
+def findall(raw_string,text): 
     """calls findall with regex string passed"""
-    finder = re.compile(r'{}'.format(args.regex))
+    finder = re.compile(raw_string)
     return finder.findall(text)
 
 
 
 def main_btre():
-    get_args()
+    args = get_args()
     groups = None
+    raw_string=r'{}'.format(args.regex)
     if args.data != None:
         text = args.data
     elif args.data == None:
@@ -38,7 +36,7 @@ def main_btre():
 
     if args.groups != None:
         groups = args.groups.split(',')
-    data = findall(text)
+    data = findall(raw_string,text)
     printer = []
     if groups != None:
         for each in data:
